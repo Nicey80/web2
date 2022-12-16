@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tidyverse on DataSorcery</title>
+    <link>/tags/tidyverse/</link>
+    <description>Recent content in tidyverse on DataSorcery</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/tidyverse/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tidy Tuesday Income Data and plotting themes</title>
+      <link>/posts/tt-income-data-and-plotting-themes/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/tt-income-data-and-plotting-themes/</guid>
+      <description>A while since I&amp;rsquo;ve completed a tidy tuesday challenge here so to get back in the swing of things I&amp;rsquo;ve chosen a fairly simple plot of income equality by race and focused on altering the default these to try to create a more striking visual effect for the data.
+Code The code is pretty straight forward to create the chart. The key effect I was going for here was to alter the theme to make a more striking visual.</description>
+    </item>
+    
+    <item>
+      <title>Tidy Tuesday NFL data</title>
+      <link>/posts/tidy-tuesday-nfl-data/</link>
+      <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/tidy-tuesday-nfl-data/</guid>
+      <description>Did the best team win the Superbowl?
+Armed with the Tidy Tuesday data from NFL seasons back to 2000 I set out to answer the question above. With a rudimentary metric assessing the team strength based on margin of victory and strength of schedule. I created a quick data viz showing that less than third of the time the team ranked top by this metric has won the superbowl
+The viz Using the ggimage package to bring a bit of Lombardi glitz to the data viz and a little bit of data wrangling to rank and join the superbowl winners with the top ranked team data gave us this output</description>
+    </item>
+    
+    <item>
+      <title>Tidy Tuesday Spotify data</title>
+      <link>/posts/tt-spotify/</link>
+      <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/tt-spotify/</guid>
+      <description>This weeks Tidy Tuesday challenge centred around Spotify data, over 32,000 songs from multiple genres from the 60s to today. Given this was my first Tidy Tuesday for a while I decided to go for something relatively quick and simple to try to get back into the habit and look at the popularity of different types of music over time.
+Code Having read in the data the next step was to make a quick modification to allow me to work with dates as opposed to character values.</description>
+    </item>
+    
+  </channel>
+</rss>

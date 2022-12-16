@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on DataSorcery</title>
+    <link>/portfolio/</link>
+    <description>Recent content in Projects on DataSorcery</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>findR - find places of interest in the UK</title>
+      <link>/portfolio/2022-12-07-findr/</link>
+      <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/portfolio/2022-12-07-findr/</guid>
+      <description>Whether its Chinese in Canterbury or Indian in Iwade - findR has them all
+Powered by Yelp Search I&amp;rsquo;ve developed a quick app to allow people to quickly find businesses or places of interest in the UK of their choosing and allowing a filter by rating.
+App Details Hosted on my own Shiny Server instance with thanks to the excellent instructions from charlesbordet (https://www.charlesbordet.com/en/guide-shiny-aws/) the app uses the functions within the yelpr (https://github.</description>
+    </item>
+    
+    <item>
+      <title>NLP Next Word Prediction</title>
+      <link>/portfolio/nlp-next-word-prediction/</link>
+      <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/portfolio/nlp-next-word-prediction/</guid>
+      <description>NLP Predict the next word.
+As the final part of the Coursera R Programming Course I had to build an App that would predict the next word as a user started to type in words so that after min. 3 words the next word is predicted. Similar to the function of some smartphones.
+The app can be found here: https://nicey80.shinyapps.io/NLP_App_v2/
+The App The App was created primarily using the tidytext package to ingest the corpus data (tweets, blogs and news articles) and create the relevant ngram models and then using dplyr &amp;amp; data.</description>
+    </item>
+    
+  </channel>
+</rss>

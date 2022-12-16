@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>r on DataSorcery</title>
+    <link>/categories/r/</link>
+    <description>Recent content in r on DataSorcery</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tidy Tuesday NFL data</title>
+      <link>/posts/tidy-tuesday-nfl-data/</link>
+      <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/tidy-tuesday-nfl-data/</guid>
+      <description>Did the best team win the Superbowl?
+Armed with the Tidy Tuesday data from NFL seasons back to 2000 I set out to answer the question above. With a rudimentary metric assessing the team strength based on margin of victory and strength of schedule. I created a quick data viz showing that less than third of the time the team ranked top by this metric has won the superbowl
+The viz Using the ggimage package to bring a bit of Lombardi glitz to the data viz and a little bit of data wrangling to rank and join the superbowl winners with the top ranked team data gave us this output</description>
+    </item>
+    
+  </channel>
+</rss>

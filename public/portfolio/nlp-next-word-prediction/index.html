@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en">
+    
+    
+
+
+    <head itemscope itemtype="/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    
+    
+    
+
+
+
+<title itemprop="name">NLP Next Word Prediction • DataSorcery</title>
+<meta name="author" content="Paul Nice" />
+<meta name="copyright" content="Paul Nice" />
+
+<meta itemprop="name" content="NLP Next Word Prediction | DataSorcery" />
+<meta name="application-name" content="NLP Next Word Prediction | DataSorcery" />
+<meta name="title" content="NLP Next Word Prediction • DataSorcery" />
+<meta name="description" content="NLP Using tidytext to predict the next word in a sentence" />
+<meta name="keywords" content="NLP, tidytext, Apps" />
+<script defer type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "headline": "NLP Next Word Prediction",
+      "author": {
+        "@type": "Person",
+        "name": "Paul Nice"
+      },
+      "datePublished": "2020-02-16",
+      "description": "NLP Next Word Prediction",
+      "wordCount":  153 ,
+      "mainEntityOfPage": "True",
+      "dateModified": "2020-02-16",          
+      "image": {
+        "@type": "imageObject",
+        "url": ""
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DataSorcery",
+        "logo": {
+          "@type": "imageObject",
+          "url": "\/favicon-32x32.png"
+        }
+      }
+    }
+  </script>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="NLP Next Word Prediction"/>
+<meta name="twitter:description" content="NLP Using tidytext to predict the next word in a sentence"/>
+
+
+<meta name="twitter:site" content="@nicey1980" />
+<meta name="twitter:creator" content="@nicey1980" />
+
+<meta name="robots" content="index,follow" /> 
+<meta name="googlebot" content="index,follow" />
+<meta name="theme-color" content="#292A2C" /> 
+<meta name="msapplication-TileColor" content="#292A2C" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" /> 
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" /> 
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="" /> 
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" /> 
+<meta property="og:updated_time" content=2020-02-16T20:24:09Z />
+<meta property="og:title" content="NLP Next Word Prediction" />
+<meta property="og:description" content="NLP Using tidytext to predict the next word in a sentence" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/portfolio/nlp-next-word-prediction/" /><meta property="article:section" content="portfolio" />
+<meta property="article:published_time" content="2020-02-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-16T20:24:09+00:00" /><meta property="og:site_name" content="DataSorcery" />
+
+    
+<link rel="stylesheet" href="/prism/prism.css">
+<link rel="stylesheet" href="/prism/prism-colours.css">
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.02f616a99fc628d95068f65b617443d8a9bdc29abf2379ec3793344a662f0e02.css" integrity="sha256-AvYWqZ/GKNlQaPZbYXRD2Km9wpq/I3nsN5M0SmYvDgI=">
+
+
+<link rel="stylesheet" href="/scss/fork-awesome.6289bc8da8478f9cc0996bff00bc0cb855509104be3137d81246a5d16328da4a.css" integrity="sha256-Yom8jahHj5zAmWv/ALwMuFVQkQS&#43;MTfYEkal0WMo2ko=">
+
+
+<link rel="stylesheet" href="/scss/print.e1076a55bf53a2bef8c93fca6d352cb1d8dc2c5b94d4629ff56b321912038944.css" integrity="sha256-4QdqVb9Tor74yT/KbTUssdjcLFuU1GKf9WsyGRIDiUQ=" media="print">
+
+
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js" integrity="sha256-9uAoNWHdszsUDhSXf/rVcWOqKPfi5/8V5R4UdbZle2A=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js" integrity="sha256-nwhzW/P9gnvWMPOm84MK8BzQRRMdi8iutxMuYsYcOgw=" crossorigin="anonymous"></script>
+    <![endif]-->
+    <!-- Icons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+        <link rel="canonical" type="text/html" href="/" title="DataSorcery" />
+        <link rel="alternate" type="application/rss+xml" href="/index.xml" title="DataSorcery" />    
+    
+    <link rel="feed" type="application/rss+xml" href="/index.xml" title="DataSorcery" />
+    
+    
+</head>
+
+
+    <body class="h-card  ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+       <span class="prompt">&gt;</span><a class="u-url" href="/">cd  <span class="logo-cursor"></span></a>
+      </span>
+      
+        
+        
+        <div class="author-image">
+          <a href="/"><img src="/img/pn.jpg" class="img--circle img--headshot element--center u-logo"></a>
+        </div>
+        
+      
+      <p class="site__description">
+         DataSorcery 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle"><span class="prompt">&gt;</span> cd  <span class="logo-cursor"></span></label>
+      <div class="menu-content">
+        <section class="social">
+	
+	<a href="https://twitter.com/nicey1980" rel="me"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://github.com/%3cusername%3e" rel="me"><i class="fa fa-github" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://www.linkedin.com/in/paulnice" rel="me"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://stackoverflow.com/users/%3cusername%3e" rel="me"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+	
+	
+	
+	
+		
+			<a href="/index.xml" rel="me"><i class="fa fa-rss" aria-hidden="true"></i></a>
+		
+	
+	
+	<a href="mailto:nicey80@gmail.com" rel="me" class="u-email"><i class="fa fa-at" aria-hidden="true"></i></a>
+	
+</section>
+
+        <hr>
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <hr>
+        
+      </div>
+    </div>
+    <div class="subfoot">
+  
+  <div class="copyright">
+    &copy; 2022 <span class="p-name">htr3n</span>
+    
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+    
+  </div>
+  
+  
+  <div class="builtwith">
+  Built with <a href="https://gohugo.io/">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a> and <a href="https://github.com/thushan/hyde-hyde">forked</a>.
+  </div>
+  
+</div>
+  </div>
+</div>
+
+        <div class="content container">
+            <main>
+                
+    
+
+
+
+
+<article class="h-entry">
+  <header>
+    <h1 class="p-name">NLP Next Word Prediction</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fa fa-calendar" aria-hidden="true" title="Published date"></i>
+      <time class="item__date dt-published" datetime="2020-02-16 00:00:00 &#43;0000 UTC">
+        Feb 16, 2020
+      </time>          
+    
+    
+      <i class="fa fa-calendar-check-o" aria-hidden="true" title="Last modified"></i>
+      <time class="item__date dt-published" datetime="2020-02-16 00:00:00 &#43;0000 UTC">
+        Feb 16, 2020
+      </time>          
+    
+    &nbsp; <i class="fa fa-clock-o" aria-hidden="true"></i>
+    1 min read
+  
+    
+    
+    &nbsp; <i class="fa fa-folder" aria-hidden="true"></i>
+        
+        
+            <a class="badge badge-category p-category" href="/categories/apps">APPS</a>
+            ,
+        
+            <a class="badge badge-category p-category" href="/categories/nlp">NLP</a>
+            
+        
+    
+  
+  
+  <br/>
+  
+    
+    
+    <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        
+          <a class="badge badge-tag p-category" href="/tags/nlp">#nlp</a>
+           
+        
+          <a class="badge badge-tag p-category" href="/tags/tidytext">#tidytext</a>
+           
+        
+          <a class="badge badge-tag p-category" href="/tags/apps">#apps</a>
+          
+        
+    
+  
+</div>
+
+
+  </header>
+  
+  <div class="article-old">
+    This post has not been modified in <span class="article-age">1033</span> days, it may be out of date and may no longer relevant.
+  </div>
+  
+  <div class="intro e-content">
+    <p></p>
+  </div>
+  
+  
+  <div class="post e-content">
+    <p><strong>NLP Predict the next word.</strong></p>
+<p>As the final part of the Coursera R Programming Course I had to build an App that would predict the next word as a user started to type in words so that after min. 3 words the next word is predicted. Similar to the function of some smartphones.</p>
+<p>The app can be found here:
+<a href="https://nicey80.shinyapps.io/NLP_App_v2/">https://nicey80.shinyapps.io/NLP_App_v2/</a></p>
+<h2 id="the-app">The App</h2>
+<p>The App was created primarily using the tidytext package to ingest the corpus data (tweets, blogs and news articles) and create the relevant ngram models and then using dplyr &amp; data.table to process the search based on the most likely outcome from the gram models.</p>
+<p>Full Code is available here:
+<a href="https://github.com/Nicey80/NLP_CAP/blob/master/app.R">https://github.com/Nicey80/NLP_CAP/blob/master/app.R</a></p>
+<h3 id="useful-resources">Useful Resources</h3>
+<p>When building the app I found Julia Silge &amp; David Robinson&rsquo;s excellent book on tidytext and excellent resource to be able to refer to to work through examples etc. The book can be found here for reference:
+<a href="https://www.tidytextmining.com/">https://www.tidytextmining.com/</a></p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    
+    <a href="/portfolio/2022-12-07-findr/" class="navigation-next h-entry">
+      <span class="navigation-tittle p-name">findR - find places of interest in the UK</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+
+  
+
+    
+    
+        <div class="comments-disabled">Post is <span class="comments-age">1034</span> days old, comments have been disabled. </div>
+    
+
+
+</article>
+
+
+            </main>
+        </div>
+        
+    
+
+
+
+<script src='/prism/prism.js'></script>
+    
+
+
+
+    </body>
+</html>

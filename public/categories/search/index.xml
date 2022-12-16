@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Search on DataSorcery</title>
+    <link>/categories/search/</link>
+    <description>Recent content in Search on DataSorcery</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/search/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>findR - find places of interest in the UK</title>
+      <link>/portfolio/2022-12-07-findr/</link>
+      <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/portfolio/2022-12-07-findr/</guid>
+      <description>Whether its Chinese in Canterbury or Indian in Iwade - findR has them all
+Powered by Yelp Search I&amp;rsquo;ve developed a quick app to allow people to quickly find businesses or places of interest in the UK of their choosing and allowing a filter by rating.
+App Details Hosted on my own Shiny Server instance with thanks to the excellent instructions from charlesbordet (https://www.charlesbordet.com/en/guide-shiny-aws/) the app uses the functions within the yelpr (https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

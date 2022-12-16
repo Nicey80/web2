@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en">
+    
+    
+
+
+    <head itemscope itemtype="/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    
+    
+    
+
+
+
+<title itemprop="name">Tidy Tuesday Income Data and plotting themes • DataSorcery</title>
+<meta name="author" content="Paul Nice" />
+<meta name="copyright" content="Paul Nice" />
+
+<meta itemprop="name" content="Tidy Tuesday Income Data and plotting themes | DataSorcery" />
+<meta name="application-name" content="Tidy Tuesday Income Data and plotting themes | DataSorcery" />
+<meta name="title" content="Tidy Tuesday Income Data and plotting themes • DataSorcery" />
+<meta name="description" content="A while since I&rsquo;ve completed a tidy tuesday challenge here so to get back in the swing of things I&rsquo;ve chosen a fairly simple plot of income equality by race and focused on altering the default these to try to create a more striking visual effect for the data.
+Code The code is pretty straight forward to create the chart. The key effect I was going for here was to alter the theme to make a more striking visual." />
+<meta name="keywords" content="tidyverse, dataviz" />
+<script defer type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "headline": "Tidy Tuesday Income Data and plotting themes",
+      "author": {
+        "@type": "Person",
+        "name": "Paul Nice"
+      },
+      "datePublished": "2021-02-22",
+      "description": "Tidy Tuesday Income Data and plotting themes",
+      "wordCount":  242 ,
+      "mainEntityOfPage": "True",
+      "dateModified": "2021-02-22",          
+      "image": {
+        "@type": "imageObject",
+        "url": ""
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DataSorcery",
+        "logo": {
+          "@type": "imageObject",
+          "url": "\/favicon-32x32.png"
+        }
+      }
+    }
+  </script>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tidy Tuesday Income Data and plotting themes"/>
+<meta name="twitter:description" content="A while since I&rsquo;ve completed a tidy tuesday challenge here so to get back in the swing of things I&rsquo;ve chosen a fairly simple plot of income equality by race and focused on altering the default these to try to create a more striking visual effect for the data.
+Code The code is pretty straight forward to create the chart. The key effect I was going for here was to alter the theme to make a more striking visual."/>
+
+
+<meta name="twitter:site" content="@nicey1980" />
+<meta name="twitter:creator" content="@nicey1980" />
+
+<meta name="robots" content="index,follow" /> 
+<meta name="googlebot" content="index,follow" />
+<meta name="theme-color" content="#292A2C" /> 
+<meta name="msapplication-TileColor" content="#292A2C" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" /> 
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" /> 
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="" /> 
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" /> 
+<meta property="og:updated_time" content=2021-02-22T22:46:39Z />
+<meta property="og:title" content="Tidy Tuesday Income Data and plotting themes" />
+<meta property="og:description" content="A while since I&rsquo;ve completed a tidy tuesday challenge here so to get back in the swing of things I&rsquo;ve chosen a fairly simple plot of income equality by race and focused on altering the default these to try to create a more striking visual effect for the data.
+Code The code is pretty straight forward to create the chart. The key effect I was going for here was to alter the theme to make a more striking visual." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/tt-income-data-and-plotting-themes/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-22T22:46:39+00:00" /><meta property="og:site_name" content="DataSorcery" />
+
+    
+<link rel="stylesheet" href="/prism/prism.css">
+<link rel="stylesheet" href="/prism/prism-colours.css">
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.02f616a99fc628d95068f65b617443d8a9bdc29abf2379ec3793344a662f0e02.css" integrity="sha256-AvYWqZ/GKNlQaPZbYXRD2Km9wpq/I3nsN5M0SmYvDgI=">
+
+
+<link rel="stylesheet" href="/scss/fork-awesome.6289bc8da8478f9cc0996bff00bc0cb855509104be3137d81246a5d16328da4a.css" integrity="sha256-Yom8jahHj5zAmWv/ALwMuFVQkQS&#43;MTfYEkal0WMo2ko=">
+
+
+<link rel="stylesheet" href="/scss/print.e1076a55bf53a2bef8c93fca6d352cb1d8dc2c5b94d4629ff56b321912038944.css" integrity="sha256-4QdqVb9Tor74yT/KbTUssdjcLFuU1GKf9WsyGRIDiUQ=" media="print">
+
+
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js" integrity="sha256-9uAoNWHdszsUDhSXf/rVcWOqKPfi5/8V5R4UdbZle2A=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js" integrity="sha256-nwhzW/P9gnvWMPOm84MK8BzQRRMdi8iutxMuYsYcOgw=" crossorigin="anonymous"></script>
+    <![endif]-->
+    <!-- Icons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+        <link rel="canonical" type="text/html" href="/" title="DataSorcery" />
+        <link rel="alternate" type="application/rss+xml" href="/index.xml" title="DataSorcery" />    
+    
+    <link rel="feed" type="application/rss+xml" href="/index.xml" title="DataSorcery" />
+    
+    
+</head>
+
+
+    <body class="h-card  ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+       <span class="prompt">&gt;</span><a class="u-url" href="/">cd  <span class="logo-cursor"></span></a>
+      </span>
+      
+        
+        
+        <div class="author-image">
+          <a href="/"><img src="/img/pn.jpg" class="img--circle img--headshot element--center u-logo"></a>
+        </div>
+        
+      
+      <p class="site__description">
+         DataSorcery 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle"><span class="prompt">&gt;</span> cd  <span class="logo-cursor"></span></label>
+      <div class="menu-content">
+        <section class="social">
+	
+	<a href="https://twitter.com/nicey1980" rel="me"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://github.com/%3cusername%3e" rel="me"><i class="fa fa-github" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://www.linkedin.com/in/paulnice" rel="me"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://stackoverflow.com/users/%3cusername%3e" rel="me"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+	
+	
+	
+	
+		
+			<a href="/index.xml" rel="me"><i class="fa fa-rss" aria-hidden="true"></i></a>
+		
+	
+	
+	<a href="mailto:nicey80@gmail.com" rel="me" class="u-email"><i class="fa fa-at" aria-hidden="true"></i></a>
+	
+</section>
+
+        <hr>
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <hr>
+        
+      </div>
+    </div>
+    <div class="subfoot">
+  
+  <div class="copyright">
+    &copy; 2022 <span class="p-name">htr3n</span>
+    
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+    
+  </div>
+  
+  
+  <div class="builtwith">
+  Built with <a href="https://gohugo.io/">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a> and <a href="https://github.com/thushan/hyde-hyde">forked</a>.
+  </div>
+  
+</div>
+  </div>
+</div>
+
+        <div class="content container">
+            <main>
+                
+    
+
+
+
+
+<article class="h-entry">
+  <header>
+    <h1 class="p-name">Tidy Tuesday Income Data and plotting themes</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fa fa-calendar" aria-hidden="true" title="Published date"></i>
+      <time class="item__date dt-published" datetime="2021-02-22 00:00:00 &#43;0000 UTC">
+        Feb 22, 2021
+      </time>          
+    
+    
+      <i class="fa fa-calendar-check-o" aria-hidden="true" title="Last modified"></i>
+      <time class="item__date dt-published" datetime="2021-02-22 00:00:00 &#43;0000 UTC">
+        Feb 22, 2021
+      </time>          
+    
+    &nbsp; <i class="fa fa-clock-o" aria-hidden="true"></i>
+    2 min read
+  
+    
+    
+    &nbsp; <i class="fa fa-folder" aria-hidden="true"></i>
+        
+        
+            <a class="badge badge-category p-category" href="/categories/dataviz">DATAVIZ</a>
+            
+        
+    
+  
+  
+  <br/>
+  
+    
+    
+    <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        
+          <a class="badge badge-tag p-category" href="/tags/tidyverse">#tidyverse</a>
+           
+        
+          <a class="badge badge-tag p-category" href="/tags/dataviz">#dataviz</a>
+          
+        
+    
+  
+</div>
+
+
+  </header>
+  
+  <div class="article-old">
+    This post has not been modified in <span class="article-age">661</span> days, it may be out of date and may no longer relevant.
+  </div>
+  
+  <div class="intro e-content">
+    <p></p>
+  </div>
+  
+  
+  <div class="post e-content">
+    <p>A while since I&rsquo;ve completed a tidy tuesday challenge here so to get back in the swing of things I&rsquo;ve chosen a fairly simple plot of income equality by race and focused on altering the default these to try to create a more striking visual effect for the data.</p>
+<figure><img src="/img/Spotify.png"/>
+</figure>
+
+<h2 id="code">Code</h2>
+<p>The code is pretty straight forward to create the chart. The key effect I was going for here was to alter the theme to make a more striking visual.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>tuesdata <span style="color:#f92672">&lt;-</span> tidytuesdayR<span style="color:#f92672">::</span><span style="color:#a6e22e">tt_load</span>(<span style="color:#e6db74">&#39;2021-02-09&#39;</span>)
+</span></span><span style="display:flex;"><span>tuesdata
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tt <span style="color:#f92672">&lt;-</span> tuesdata<span style="color:#f92672">$</span>income_distribution
+</span></span><span style="display:flex;"><span>tt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(tidyverse)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(scales)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(ggrepel)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">str</span>(tt)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">summary</span>(tt)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">unique</span>(tt<span style="color:#f92672">$</span>race)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tt <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>year, y<span style="color:#f92672">=</span>income_median)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(group<span style="color:#f92672">=</span>race, colour<span style="color:#f92672">=</span>race))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tt2 <span style="color:#f92672">&lt;-</span> tt <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">filter</span>(year<span style="color:#f92672">==</span><span style="color:#ae81ff">2019</span>) <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">group_by</span>(year,race) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">summarise</span>(med<span style="color:#f92672">=</span><span style="color:#a6e22e">mean</span>(income_median)) <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">as_tibble</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tt <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>year, y<span style="color:#f92672">=</span>income_median)) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">geom_line</span>(data<span style="color:#f92672">=</span>tt <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">filter</span>(race<span style="color:#f92672">!=</span><span style="color:#e6db74">&#34;All Races&#34;</span>),<span style="color:#a6e22e">aes</span>(group<span style="color:#f92672">=</span>race, colour<span style="color:#f92672">=</span>race))<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">geom_line</span>(data<span style="color:#f92672">=</span>tt <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">filter</span>(race<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;All Races&#34;</span>),colour<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yellow&#34;</span>,size<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, linetype<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">geom_label_repel</span>(data<span style="color:#f92672">=</span>tt2,<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span><span style="color:#ae81ff">2030</span>, y<span style="color:#f92672">=</span>med,label<span style="color:#f92672">=</span>race), nudge_x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>)<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ggtitle</span>(label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Racial Income Inequaltiy in USA&#34;</span>, subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Median income since the financial crash of 2008 has grown much slower in the Black population&#34;</span>)<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">theme</span>(legend.position <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;none&#39;</span>, 
+</span></span><span style="display:flex;"><span>          axis.title <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(), 
+</span></span><span style="display:flex;"><span>          text <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(family <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Tahoma&#34;</span>, colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;green&#34;</span>), 
+</span></span><span style="display:flex;"><span>          axis.text <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;green&#34;</span>), 
+</span></span><span style="display:flex;"><span>          plot.background <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_rect</span>(fill<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;black&#34;</span>),
+</span></span><span style="display:flex;"><span>          panel.background<span style="color:#f92672">=</span><span style="color:#a6e22e">element_rect</span>(fill<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;black&#34;</span>))<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scale_y_continuous</span>(labels<span style="color:#f92672">=</span><span style="color:#a6e22e">label_dollar</span>(scale <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.001</span>, suffix <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;k&#34;</span>))
+</span></span></code></pre></div><h3 id="altering-the-theme">Altering the theme</h3>
+<p>Key changes to the default theme</p>
+<ol>
+<li>Removed the legend and replaced with offset labels using the geom_label_repel geom</li>
+<li>Axis titles removed as the scales are fairly self explanatory axis title=element_blank()</li>
+<li>Text colour and font changed with text and axis text commands</li>
+<li>Plot and panel backgrounds changed to black to try to make the sries more visible</li>
+</ol>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/tidy-tuesday-vacination/" class="navigation-prev h-entry">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle p-name">Tidy Tuesday Vacination</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+
+  
+
+    
+    
+        <div class="comments-disabled">Post is <span class="comments-age">662</span> days old, comments have been disabled. </div>
+    
+
+
+</article>
+
+
+            </main>
+        </div>
+        
+    
+
+
+
+<script src='/prism/prism.js'></script>
+    
+
+
+
+    </body>
+</html>

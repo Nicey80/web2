@@ -1,0 +1,53 @@
+## Basic Configuration
+baseurl = "/"
+languageCode = "en"
+
+title = "DataSorcery"
+theme = "hyde-hyde"
+
+
+
+[params]
+    author = "Paul Nice"
+    title = "DataSorcery"
+    # description = "..."
+    authorimage = "/img/pn.jpg"
+    dateformat = "Jan 2, 2006"
+
+    # sidebar, copyright & license
+    copyright = "htr3n"
+    license = "CC BY-SA 4.0"
+    licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
+    showBuiltWith = true
+    
+    mainSections = ["post"]
+
+
+## Social Accounts
+[params.social]
+    github = "<username>"
+    #instagram = "<username>"
+    #xing = "<username>"
+    linkedin = "paulnice"
+    twitter = "nicey1980"
+    #facebook = "<username>"
+    stackoverflow = "<username>"
+    #telegram = "<username>"
+    email = "nicey80@gmail.com"
+    # gravatar = "your-email@example.com"
+    
+[[menu.main]]
+    name = "Posts"
+    weight = 100
+    identifier = "posts"
+    url = "/posts/"
+[[menu.main]]
+    name = "Portfolio"
+    identifier = "portfolio"
+    weight = 200
+    url = "/portfolio/"
+[[menu.main]]
+    name = "About"
+    identifier = "about"
+    weight = 300
+    url = "/about/"

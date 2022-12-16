@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en">
+    
+    
+
+
+    <head itemscope itemtype="/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    
+    
+    
+
+
+
+<title itemprop="name">Tidy Tuesday Vacination • DataSorcery</title>
+<meta name="author" content="Paul Nice" />
+<meta name="copyright" content="Paul Nice" />
+
+<meta itemprop="name" content="Tidy Tuesday Vacination | DataSorcery" />
+<meta name="application-name" content="Tidy Tuesday Vacination | DataSorcery" />
+<meta name="title" content="Tidy Tuesday Vacination • DataSorcery" />
+<meta name="description" content="This weeks Tidy Tuesday gave an opportunity to explore some mapping and a good excuse to look at the patchwork framework to multiplotting. I chose to explore the data from California as a good exercise in creating a chloropleth map using ggplot and the sf package. The latter was extremely useful having spent a significant amnount of time trying to join the data together but by converting the sp data to an sf data frame the flatter structure made joining the data and the subsequent plotting much easier." />
+<meta name="keywords" content="ggplot, maps" />
+<script defer type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "headline": "Tidy Tuesday Vacination",
+      "author": {
+        "@type": "Person",
+        "name": "Paul Nice"
+      },
+      "datePublished": "2020-02-27",
+      "description": "Tidy Tuesday Vacination",
+      "wordCount":  225 ,
+      "mainEntityOfPage": "True",
+      "dateModified": "2020-02-27",          
+      "image": {
+        "@type": "imageObject",
+        "url": ""
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DataSorcery",
+        "logo": {
+          "@type": "imageObject",
+          "url": "\/favicon-32x32.png"
+        }
+      }
+    }
+  </script>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tidy Tuesday Vacination"/>
+<meta name="twitter:description" content="This weeks Tidy Tuesday gave an opportunity to explore some mapping and a good excuse to look at the patchwork framework to multiplotting. I chose to explore the data from California as a good exercise in creating a chloropleth map using ggplot and the sf package. The latter was extremely useful having spent a significant amnount of time trying to join the data together but by converting the sp data to an sf data frame the flatter structure made joining the data and the subsequent plotting much easier."/>
+
+
+<meta name="twitter:site" content="@nicey1980" />
+<meta name="twitter:creator" content="@nicey1980" />
+
+<meta name="robots" content="index,follow" /> 
+<meta name="googlebot" content="index,follow" />
+<meta name="theme-color" content="#292A2C" /> 
+<meta name="msapplication-TileColor" content="#292A2C" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" /> 
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" /> 
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="" /> 
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" /> 
+<meta property="og:updated_time" content=2020-02-27T20:41:42Z />
+<meta property="og:title" content="Tidy Tuesday Vacination" />
+<meta property="og:description" content="This weeks Tidy Tuesday gave an opportunity to explore some mapping and a good excuse to look at the patchwork framework to multiplotting. I chose to explore the data from California as a good exercise in creating a chloropleth map using ggplot and the sf package. The latter was extremely useful having spent a significant amnount of time trying to join the data together but by converting the sp data to an sf data frame the flatter structure made joining the data and the subsequent plotting much easier." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/tidy-tuesday-vacination/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-02-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-27T20:41:42+00:00" /><meta property="og:site_name" content="DataSorcery" />
+
+    
+<link rel="stylesheet" href="/prism/prism.css">
+<link rel="stylesheet" href="/prism/prism-colours.css">
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.02f616a99fc628d95068f65b617443d8a9bdc29abf2379ec3793344a662f0e02.css" integrity="sha256-AvYWqZ/GKNlQaPZbYXRD2Km9wpq/I3nsN5M0SmYvDgI=">
+
+
+<link rel="stylesheet" href="/scss/fork-awesome.6289bc8da8478f9cc0996bff00bc0cb855509104be3137d81246a5d16328da4a.css" integrity="sha256-Yom8jahHj5zAmWv/ALwMuFVQkQS&#43;MTfYEkal0WMo2ko=">
+
+
+<link rel="stylesheet" href="/scss/print.e1076a55bf53a2bef8c93fca6d352cb1d8dc2c5b94d4629ff56b321912038944.css" integrity="sha256-4QdqVb9Tor74yT/KbTUssdjcLFuU1GKf9WsyGRIDiUQ=" media="print">
+
+
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js" integrity="sha256-9uAoNWHdszsUDhSXf/rVcWOqKPfi5/8V5R4UdbZle2A=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js" integrity="sha256-nwhzW/P9gnvWMPOm84MK8BzQRRMdi8iutxMuYsYcOgw=" crossorigin="anonymous"></script>
+    <![endif]-->
+    <!-- Icons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+        <link rel="canonical" type="text/html" href="/" title="DataSorcery" />
+        <link rel="alternate" type="application/rss+xml" href="/index.xml" title="DataSorcery" />    
+    
+    <link rel="feed" type="application/rss+xml" href="/index.xml" title="DataSorcery" />
+    
+    
+</head>
+
+
+    <body class="h-card  ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+       <span class="prompt">&gt;</span><a class="u-url" href="/">cd  <span class="logo-cursor"></span></a>
+      </span>
+      
+        
+        
+        <div class="author-image">
+          <a href="/"><img src="/img/pn.jpg" class="img--circle img--headshot element--center u-logo"></a>
+        </div>
+        
+      
+      <p class="site__description">
+         DataSorcery 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle"><span class="prompt">&gt;</span> cd  <span class="logo-cursor"></span></label>
+      <div class="menu-content">
+        <section class="social">
+	
+	<a href="https://twitter.com/nicey1980" rel="me"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://github.com/%3cusername%3e" rel="me"><i class="fa fa-github" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://www.linkedin.com/in/paulnice" rel="me"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://stackoverflow.com/users/%3cusername%3e" rel="me"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+	
+	
+	
+	
+		
+			<a href="/index.xml" rel="me"><i class="fa fa-rss" aria-hidden="true"></i></a>
+		
+	
+	
+	<a href="mailto:nicey80@gmail.com" rel="me" class="u-email"><i class="fa fa-at" aria-hidden="true"></i></a>
+	
+</section>
+
+        <hr>
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <hr>
+        
+      </div>
+    </div>
+    <div class="subfoot">
+  
+  <div class="copyright">
+    &copy; 2022 <span class="p-name">htr3n</span>
+    
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+    
+  </div>
+  
+  
+  <div class="builtwith">
+  Built with <a href="https://gohugo.io/">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a> and <a href="https://github.com/thushan/hyde-hyde">forked</a>.
+  </div>
+  
+</div>
+  </div>
+</div>
+
+        <div class="content container">
+            <main>
+                
+    
+
+
+
+
+<article class="h-entry">
+  <header>
+    <h1 class="p-name">Tidy Tuesday Vacination</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fa fa-calendar" aria-hidden="true" title="Published date"></i>
+      <time class="item__date dt-published" datetime="2020-02-27 00:00:00 &#43;0000 UTC">
+        Feb 27, 2020
+      </time>          
+    
+    
+      <i class="fa fa-calendar-check-o" aria-hidden="true" title="Last modified"></i>
+      <time class="item__date dt-published" datetime="2020-02-27 00:00:00 &#43;0000 UTC">
+        Feb 27, 2020
+      </time>          
+    
+    &nbsp; <i class="fa fa-clock-o" aria-hidden="true"></i>
+    2 min read
+  
+    
+    
+    &nbsp; <i class="fa fa-folder" aria-hidden="true"></i>
+        
+        
+            <a class="badge badge-category p-category" href="/categories/ggplot">GGPLOT</a>
+            ,
+        
+            <a class="badge badge-category p-category" href="/categories/maps">MAPS</a>
+            
+        
+    
+  
+  
+  <br/>
+  
+    
+    
+    <i class="fa fa-tags" aria-hidden="true"></i>
+        
+        
+          <a class="badge badge-tag p-category" href="/tags/ggplot">#ggplot</a>
+           
+        
+          <a class="badge badge-tag p-category" href="/tags/maps">#maps</a>
+          
+        
+    
+  
+</div>
+
+
+  </header>
+  
+  <div class="article-old">
+    This post has not been modified in <span class="article-age">1022</span> days, it may be out of date and may no longer relevant.
+  </div>
+  
+  <div class="intro e-content">
+    <p></p>
+  </div>
+  
+  
+  <div class="post e-content">
+    <p>This weeks Tidy Tuesday gave an opportunity to explore some mapping and a good excuse to look at the patchwork framework to multiplotting. I chose to explore the data from California as a good exercise in creating a chloropleth map using ggplot and the sf package. The latter was extremely useful having spent a significant amnount of time trying to join the data together but by converting the sp data to an sf data frame the flatter structure made joining the data and the subsequent plotting much easier.</p>
+<p>This key step was as simple as <em>st_as_sf</em></p>
+<figure><img src="/img/MMR_Vac_Cali.png"/>
+</figure>
+
+<h2 id="code">Code</h2>
+<p>Plotting code as follows</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e">#plot of state</span>
+</span></span><span style="display:flex;"><span>p1 <span style="color:#f92672">&lt;-</span> me2 <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">filter</span>(vac_pct<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>, <span style="color:#f92672">!</span><span style="color:#a6e22e">is.na</span>(vac_pct)) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ggplot</span>()<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">geom_sf</span>(<span style="color:#a6e22e">aes</span>(fill<span style="color:#f92672">=</span>vac_pct))<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">geom_point</span>(data<span style="color:#f92672">=</span>meas_cal, <span style="color:#a6e22e">aes</span>(lng,lat), colour<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;red&#39;</span>)<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scale_fill_continuous</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#ggtitle(&#34;MMR Vacination Rates in California Counties&#34;, subtitle = &#34;Plus facilites &lt;50% coverage&#34;) +</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">theme_map</span>()<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">labs</span>(var_pct<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Vacination \npercent&#34;</span>)<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">theme</span>(legend.title <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(size<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>), legend.text <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(size<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>p2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggmap</span>(ph_basemap)<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">geom_sf</span>(data<span style="color:#f92672">=</span>me_mend, fill<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;darkblue&#34;</span>, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>, inherit.aes<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>)<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">geom_point</span>(data<span style="color:#f92672">=</span>meas_mendo, <span style="color:#a6e22e">aes</span>(lng,lat, size<span style="color:#f92672">=</span>non_vac_rate))<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">theme</span>(axis.ticks <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(), axis.text <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
+</span></span><span style="display:flex;"><span>          axis.title <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(), legend.title <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(size<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>),
+</span></span><span style="display:flex;"><span>          legend.text <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(size<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>))<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#ggtitle(&#34;Mendocino County&#34;, subtitle = &#34;Non Vacination Hotspots&#34;, caption=&#34;Mendocino County Hotspots&#34;)+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">labs</span>(size<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Non Vacination \nRate&#34;</span>, caption <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mendocino County Hotspots&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p2
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>(p1 <span style="color:#f92672">|</span>(p2<span style="color:#f92672">/</span><span style="color:#a6e22e">plot_spacer</span>())) <span style="color:#f92672">+</span> <span style="color:#a6e22e">plot_layout</span>(guides <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;collect&#39;</span>, widths <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">plot_annotation</span>(
+</span></span><span style="display:flex;"><span>    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;MMR Vacination Rates in California Counties&#39;</span>,
+</span></span><span style="display:flex;"><span>    subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Highlighting facilities with &lt;50% vacination rates&#39;</span>,
+</span></span><span style="display:flex;"><span>    caption <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Pullout: Mendocino County&#39;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>Find the full code on Github here:
+<a href="https://github.com/Nicey80/tidytuesday/blob/master/2020-02-25/2020-02-25.R">https://github.com/Nicey80/tidytuesday/blob/master/2020-02-25/2020-02-25.R</a></p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/tidy-tuesday-nfl-data/" class="navigation-prev h-entry">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle p-name">Tidy Tuesday NFL data</span>
+    </a>
+    
+    
+    <a href="/posts/tt-income-data-and-plotting-themes/" class="navigation-next h-entry">
+      <span class="navigation-tittle p-name">Tidy Tuesday Income Data and plotting themes</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+
+  
+
+    
+    
+        <div class="comments-disabled">Post is <span class="comments-age">1023</span> days old, comments have been disabled. </div>
+    
+
+
+</article>
+
+
+            </main>
+        </div>
+        
+    
+
+
+
+<script src='/prism/prism.js'></script>
+    
+
+
+
+    </body>
+</html>
